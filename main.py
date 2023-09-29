@@ -99,6 +99,9 @@ boton_recomendar.grid(row=2,column=1)
 lab_inst = Label(screen,justify='center',font=('Helvetica',11,'bold'),bg='#542344',fg='white',text="Este sistema te recomendará películas / series que\ntengan, al menos, dos actores y un género en común. \nSi, además, coinciden en su director, el sistema las\npresentará como muy recomendadas")
 lab_inst.grid(row=6,column=1,pady=50)
 
+lab_inst = Label(screen,justify='center',font=('Helvetica',11,'bold'),bg='black',fg='white',text="IMPORTANTE: La base de datos\n en la que está basado el programa data de 2021, por\n lo que puede que con la peliculas actuales no\n funcione la recomendacion")
+lab_inst.grid(row=7,column=1,pady=30)
+
 
 
 screen.mainloop()
