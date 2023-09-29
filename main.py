@@ -25,8 +25,8 @@ icono = screen.iconbitmap('netflix.ico')
 
 # Etiqueta Instrucciones
 
-instrucciones = Label(screen,text = "Bienvenido. Introduce tu serie o pelicula favorita:",bg='#542344',fg="white",
-                      font=('Helvetica',12,'bold'),justify='center')
+instrucciones = Label(screen,text = "Bienvenido. Introduce en inglés tu serie o pelicula favorita:",bg='#542344',fg="white",
+                      font=('Helvetica',10,'bold'),justify='center')
 instrucciones.grid(row=0,column=1,padx=10,pady=10)
 
 
@@ -63,7 +63,7 @@ def ofrecer_usuario(genero,casting,director,peli):
                         for g in genero_x:
                             if g in lista_genero:
                                 
-                                if recomendacion not in lista_recomendadas: lista_recomendadas.append(recomendacion)
+                                if len(lista_recomendadas)< 10 and recomendacion not in lista_recomendadas: lista_recomendadas.append(recomendacion)
                                 if dato2['director'] == director:
                                     if recomendacion not in lista_muy_recomendadas: lista_muy_recomendadas.append(recomendacion)
 
