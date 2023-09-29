@@ -31,11 +31,9 @@ instrucciones.grid(row=0,column=1,padx=10,pady=10)
 
 
 
-# Entrada Pelicula/Serie
+# Funcion encargada de la recomendacion
 def ofrecer_usuario(genero,casting,director,peli):
-    #Etiqueta que mostrará la recomendación
  
-
     #Listas de variables
     lista_casting = []
     lista_recomendadas = []
@@ -43,7 +41,7 @@ def ofrecer_usuario(genero,casting,director,peli):
     lista_genero = []
     i = 0
 
-    #Bucles para separar el reparto por actores
+    #Bucles para separar el reparto por actores y los generos individualmente
     for cast in casting:
         lista_casting.append(cast)
 
@@ -75,7 +73,7 @@ def ofrecer_usuario(genero,casting,director,peli):
     else: messagebox.showinfo(title="Recomendaciones",message=f"Recomendaciones: {lista_recomendadas}\nRecomendaciones mas optimas: {lista_muy_recomendadas}")
     
     
-
+# Funcion encargada de recibir el input del usuario y enviarlo a la funcion anterior
 def procesar_info():
     try:
         peli_serie_usuario = input_user.get()
@@ -89,28 +87,17 @@ def procesar_info():
         messagebox.showerror(title="Error",message="Puede que la serie / pelicula no se encuentre en Netflix, o no esté escrita correctamente")
     
     
-            
-
-
-# Caja de texto
+# Caja de texto para el input
 input_user = Entry(screen,justify='center',bg='gray',font=('Helvetica',12,'bold'),fg='white')
 input_user.grid(row=1,column=1,pady=10)
 
-# Boton Buscar Recomendaciones
-
+# Boton Buscar Recomendaciones que activa el proceso
 boton_recomendar = Button(screen,justify='center',text="Buscar recomendaciones",bg='lightblue',fg='#542344',command=procesar_info)
 boton_recomendar.grid(row=2,column=1)
 
 # Instrucciones
-
 lab_inst = Label(screen,justify='center',font=('Helvetica',11,'bold'),bg='#542344',fg='white',text="Este sistema te recomendará películas / series que\ntengan, al menos, dos actores y un género en común. \nSi, además, coinciden en su director, el sistema las\npresentará como muy recomendadas")
 lab_inst.grid(row=6,column=1,pady=50)
-
-
-
-
-
-
 
 
 
